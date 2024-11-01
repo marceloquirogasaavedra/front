@@ -1,0 +1,28 @@
+<div class="wrapper">
+
+    <h2>Inicio de sesión</h2>
+
+    <div class="input-box">
+        <span class="icon">
+            <i class="bi bi-envelope-at-fill"></i>
+        </span>
+        <input type="email" [(ngModel)]="correo" required>
+        <label>Email</label>
+    </div>
+
+    <div class="input-box">
+        <span class="icon">
+            <i class="bi bi-lock-fill"></i>
+        </span>
+        <input type="password" [(ngModel)]="password" required>
+        <label>Password</label>
+    </div>
+
+    <div class="remember-forgot">
+        <label><input type="checkbox" [(ngModel)]="recordar">Recordar mi contraseña</label>
+    </div>
+    <div class="login-register">
+        <p>Ya tienes una cuenta?<button class="btn"(click)="iniciarSesion()" >Login</button></p>
+    </div>
+
+</div>

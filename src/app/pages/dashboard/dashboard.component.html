@@ -1,0 +1,12 @@
+<div class="dashboard">
+  <div class="user-info">
+    <img src="assets/image/login.webp" alt="User Icon" class="user-icon">
+    <h2>Bienvenido,</h2>
+    <h6 class="nameUser">{{userEmail}}</h6>
+    <p (click)="mostrarMensaje('actualizar informacion')">Actualizar informacion</p>
+    <p>Gestionar ficha</p>
+  </div>
+  <div *ngIf="mensaje" class="mensaje">
+    <p>{{ mensaje }}</p>
+  </div>
+  
