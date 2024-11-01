@@ -17,6 +17,7 @@ export class AdministradorService {
     return this.http.post(this.url  +  'login', credentials);
   }
   crearMedico(credentials:{nombre:string,apellido_paterno:string,apellido_materno:string,estado:boolean,email:string,id_sucursal_especialidad:BigInt}):Observable<any>{
+
     return this.http.post(this.url + 'medico/crear',credentials)
   }
 }
