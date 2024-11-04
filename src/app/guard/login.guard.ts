@@ -3,8 +3,8 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const loginGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
-  const obtenerTokenAuth = localStorage.getItem("adminToken")
-  if (obtenerTokenAuth != null) {
+  const obtenerTokenRol = localStorage.getItem("rol")
+  if (obtenerTokenRol ==='ROLE_Administrador') {
     return true;
   } else {
   router.navigateByUrl("login");

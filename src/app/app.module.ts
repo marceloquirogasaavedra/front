@@ -7,14 +7,31 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
+import { CrearconsultaComponent } from './pages/crearconsulta/crearconsulta.component';
+import { VerconsultaComponent } from './pages/verconsulta/verconsulta.component';
+import { CrearhorarioComponent } from './pages/crearhorario/crearhorario.component';
+import { VerhorariosComponent } from './pages/verhorarios/verhorarios.component';
+import { CrearmedicoComponent } from './pages/crearmedico/crearmedico.component';
+import { CrearespecialidadComponent } from './pages/crearespecialidad/crearespecialidad.component';
+import { ListaespecialidadComponent } from './pages/listaespecialidad/listaespecialidad.component';
+import { AuthInterceptorService } from './pages/auth-interceptor.service';
 @NgModule({
 
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    LayoutComponent
+    LayoutComponent,
+    DashboardAdminComponent,
+    CrearconsultaComponent,
+    VerconsultaComponent,
+    CrearhorarioComponent,
+    VerhorariosComponent,
+    CrearmedicoComponent,
+    CrearespecialidadComponent,
+    ListaespecialidadComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

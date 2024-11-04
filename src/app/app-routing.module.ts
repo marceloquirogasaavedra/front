@@ -4,6 +4,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { loginGuard } from './guard/login.guard';
+import { DashboardAdminComponent } from './pages/dashboard-admin/dashboard-admin.component';
+import { CrearconsultaComponent } from './pages/crearconsulta/crearconsulta.component';
+import { VerconsultaComponent } from './pages/verconsulta/verconsulta.component';
+import { CrearhorarioComponent } from './pages/crearhorario/crearhorario.component';
+import { VerhorariosComponent } from './pages/verhorarios/verhorarios.component';
+import { CrearmedicoComponent } from './pages/crearmedico/crearmedico.component';
+import { CrearespecialidadComponent } from './pages/crearespecialidad/crearespecialidad.component';
+import { ListaespecialidadComponent } from './pages/listaespecialidad/listaespecialidad.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,13 +22,50 @@ const routes: Routes = [
     path: '', 
      component: LayoutComponent,
     children: [
+   
       {
-        path: 'dashboard',  
-        component: DashboardComponent,
+        path: 'crear-consulta',
+        component: CrearconsultaComponent,
         canActivate: [loginGuard]
-      }
+      },
+      {
+        path: 'ver-consultas',
+        component: VerconsultaComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'crear-horario',
+        component: CrearhorarioComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'ver-horarios',
+        component: VerhorariosComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'crear-medico',
+        component: CrearmedicoComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'crear-especialidad',
+        component: CrearespecialidadComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'ver-especialidades',
+        component: ListaespecialidadComponent,
+        canActivate: [loginGuard]
+      },
     ]
-  }
+  },
+  {
+    path: 'dashboard-admin',
+    component: DashboardAdminComponent,
+    canActivate: [loginGuard]
+  },
+
 ];
 
 @NgModule({
