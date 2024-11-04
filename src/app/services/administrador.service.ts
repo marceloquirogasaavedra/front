@@ -19,7 +19,9 @@ export class AdministradorService {
   listarEspecialidades(): Observable<any> {
     return this.http.get(this.url + 'especialidad/listar');
   }
+
   crearEspecialidad(credentials: { nombre: string, descripcion: string }): Observable<any> {
     return this.http.post(this.url + 'especialidad/guardar', credentials)
+
   }
 }
