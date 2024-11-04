@@ -1,0 +1,115 @@
+.dashboard {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: max-content;
+    padding: 1rem;
+  }
+  .user-info {
+    width:19rem;
+    text-align: center;
+    background: #87a4fc;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(20px);
+    height: 95vh;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+  h2{
+    margin-bottom: 0rem;
+    text-align: center;
+    color: #faf2e4;
+  }
+  .nameUser{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #faf2e4;
+    text-align: center;
+    margin-bottom: 1.8rem;
+  }
+  .user-info p{
+    padding:0.7rem 0.8rem ;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fdfdfd;
+    background-color: #3c3c3c;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  .user-info p:hover{
+    background-color: #053760fa;
+  }
+  
+  .user-icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    margin-bottom: 0rem;
+  }
+  
+  .mensaje {
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  ///////////////////////////////// drop button ////////////////////////
+  
+  /* Contenedor del menú desplegable */
+
+  .dropdown {
+    position: relative;
+    margin-bottom: 0.85rem;
+  }
+  
+  /* Contenido del menú desplegable */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px; /* Despliega hacia la derecha */
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links dentro del menú desplegable */
+  .dropdown-content a {
+    color: rgb(255, 251, 251);
+    background-color: #3c3c3c;
+    padding: 5px 0px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: inline;
+  }
+  .dropbtn {
+    width: 100%;
+    background-color: #3c3c3c;
+    color: white;
+    padding:0.7rem 0.8rem ;
+    font-size: 0.75rem;
+   font-weight: 600;
+    border: none;
+    cursor: pointer;
+    border-radius:1rem;
+  }
+  .dropdown-content {
+    display: none;
+    right: 1.5rem ;
+    left: 1.5rem;/* Despliega hacia la derecha */
+    margin-bottom: 0.8rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  /* Cambiar el color del link al pasar el ratón */
+  .dropdown-content a:hover {
+    background-color: #053760fa;
+  
+  }
