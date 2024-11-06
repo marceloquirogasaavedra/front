@@ -12,6 +12,8 @@ import { VerhorariosComponent } from './pages/verhorarios/verhorarios.component'
 import { CrearmedicoComponent } from './pages/crearmedico/crearmedico.component';
 import { CrearespecialidadComponent } from './pages/crearespecialidad/crearespecialidad.component';
 import { ListaespecialidadComponent } from './pages/listaespecialidad/listaespecialidad.component';
+import { ListasucursalComponent } from './pages/listasucursal/listasucursal.component';
+import { CrearsucursalComponent } from './pages/crearsucursal/crearsucursal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -56,6 +58,16 @@ const routes: Routes = [
       {
         path: 'ver-especialidades',
         component: ListaespecialidadComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'crear-sucursal',
+        component: CrearsucursalComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'ver-sucursales',
+        component: ListasucursalComponent,
         canActivate: [loginGuard]
       },
     ]
