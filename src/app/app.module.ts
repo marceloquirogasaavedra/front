@@ -17,6 +17,8 @@ import { CrearmedicoComponent } from './pages/crearmedico/crearmedico.component'
 import { CrearespecialidadComponent } from './pages/crearespecialidad/crearespecialidad.component';
 import { ListaespecialidadComponent } from './pages/listaespecialidad/listaespecialidad.component';
 import { AuthInterceptorService } from './pages/auth-interceptor.service';
+import { CrearsucursalComponent } from './pages/crearsucursal/crearsucursal.component';
+import { ListasucursalComponent } from './pages/listasucursal/listasucursal.component';
 @NgModule({
 
   declarations: [
@@ -31,7 +33,9 @@ import { AuthInterceptorService } from './pages/auth-interceptor.service';
     VerhorariosComponent,
     CrearmedicoComponent,
     CrearespecialidadComponent,
-    ListaespecialidadComponent
+    ListaespecialidadComponent,
+    CrearsucursalComponent,
+    ListasucursalComponent
   ],
   imports: [
     BrowserModule,
