@@ -18,7 +18,7 @@
                 <label>Estado: </label>
                 <div class="checkbox-container">
                     <!-- Convertimos el valor del checkbox de booleano a string para el estado -->
-                    <input type="checkbox" [(ngModel)]="medico.medicoDTO.estado" (ngModelChange)="medico.medicoDTO.estado = $event ? 'true' : 'false'" name="estado">
+                    <input type="checkbox" [(ngModel)]="medico.medicoDTO.estado" (ngModelChange)="medico.medicoDTO.estado = $event ? true : false" name="estado">
                     <div class="checkbox-label">{{ medico.medicoDTO.estado }}</div>
                 </div>
             </div>
