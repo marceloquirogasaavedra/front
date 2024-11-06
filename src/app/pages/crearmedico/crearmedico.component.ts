@@ -9,13 +9,14 @@ import { AdministradorService } from '../../services/administrador.service';
 export class CrearmedicoComponent implements OnInit {
 
   medico = {
-    nombre: '',
-    apellido_paterno: '',
-    apellido_materno: '',
-    estado: true,
-    email: '',
-    id_usuario: 'null',
-    id_sucursal_especialidad: 'null',
+    medicoDTO:{
+      nombre: '',
+      apellido_paterno: '',
+      apellido_materno: '',
+      estado: true,
+      email: '',
+      id_usuario: 'null',
+      id_sucursal_especialidad: 'null'},
     sucursalEspecialidadDTO:
     {
       id_sucursal: 0, 

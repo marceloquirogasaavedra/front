@@ -28,13 +28,14 @@ export class AdministradorService {
   }
  ////////////////// MEDICO ////////////////
   crearMedico(credentials: {
+    medicoDTO:{
     nombre: string,
     apellido_paterno: string,
     apellido_materno: string, 
     estado: boolean, 
     email: string, 
     id_usuario: string,
-    id_sucursal_especialidad: string ,
+    id_sucursal_especialidad: string },
     sucursalEspecialidadDTO: { 
       id_sucursal: number,
        id_especialidad: number
