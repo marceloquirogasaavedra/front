@@ -14,6 +14,8 @@ import { CrearespecialidadComponent } from './pages/crearespecialidad/crearespec
 import { ListaespecialidadComponent } from './pages/listaespecialidad/listaespecialidad.component';
 import { ListasucursalComponent } from './pages/listasucursal/listasucursal.component';
 import { CrearsucursalComponent } from './pages/crearsucursal/crearsucursal.component';
+import { ListamedicoComponent } from './pages/listamedico/listamedico.component';
+import { ActualizarmedicoComponent } from './pages/actualizarmedico/actualizarmedico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,6 +26,9 @@ const routes: Routes = [
     path: '', 
      component: LayoutComponent,
     children: [
+      { path: 'actualizar-medico/:id', component: ActualizarmedicoComponent,
+        canActivate:[loginGuard]
+       }, // otras rutas
    
       {
         path: 'crear-consulta',
@@ -48,6 +53,11 @@ const routes: Routes = [
       {
         path: 'crear-medico',
         component: CrearmedicoComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'listar-medico',
+        component: ListamedicoComponent,
         canActivate: [loginGuard]
       },
       {
