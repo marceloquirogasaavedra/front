@@ -20,6 +20,7 @@ import { AuthInterceptorService } from './pages/auth-interceptor.service';
 import { CrearsucursalComponent } from './pages/crearsucursal/crearsucursal.component';
 import { ListasucursalComponent } from './pages/listasucursal/listasucursal.component';
 import { ListamedicoComponent } from './pages/listamedico/listamedico.component';
+import { ActualizarmedicoComponent } from './pages/actualizarmedico/actualizarmedico.component';
 @NgModule({
 
   declarations: [
@@ -37,7 +38,8 @@ import { ListamedicoComponent } from './pages/listamedico/listamedico.component'
     ListaespecialidadComponent,
     CrearsucursalComponent,
     ListasucursalComponent,
-    ListamedicoComponent
+    ListamedicoComponent,
+    ActualizarmedicoComponent
   ],
   imports: [
     BrowserModule,
