@@ -1,1 +1,40 @@
-<p>crearhorario works!</p>
+<div class="container">
+    <h1>Gestión de Horarios</h1>
+    <div class="form-group">
+      <label for="medicoSelect">Seleccionar Médico:</label>
+      <select id="medicoSelect" class="form-control" [(ngModel)]="horario.medicoId">
+        <option *ngFor="let medico of medicos" [value]="medico.id">{{ medico.nombre }}</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" (click)="abrirModal(content)">Crear Horario</button>
+  
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Crear Horario</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="dia">Día:</label>
+          <input type="text" id="dia" class="form-control" [(ngModel)]="horario.dia">
+        </div>
+        <div class="form-group">
+          <label>Turno Mañana:</label>
+          <input type="time" class="form-control" [(ngModel)]="horario.turnoMananaInicio" placeholder="Inicio">
+          <input type="time" class="form-control" [(ngModel)]="horario.turnoMananaFin" placeholder="Fin">
+        </div>
+        <div class="form-group">
+          <label>Turno Tarde:</label>
+          <input type="time" class="form-control" [(ngModel)]="horario.turnoTardeInicio" placeholder="Inicio">
+          <input type="time" class="form-control" [(ngModel)]="horario.turnoTardeFin" placeholder="Fin">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Confirmar Cambios</button>
+      </div>
+    </ng-template>
+  </div>
+  

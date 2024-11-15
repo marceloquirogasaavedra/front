@@ -16,6 +16,8 @@ import { ListasucursalComponent } from './pages/listasucursal/listasucursal.comp
 import { CrearsucursalComponent } from './pages/crearsucursal/crearsucursal.component';
 import { ListamedicoComponent } from './pages/listamedico/listamedico.component';
 import { ActualizarmedicoComponent } from './pages/actualizarmedico/actualizarmedico.component';
+import { ActualizarsucursalComponent } from './pages/actualizarsucursal/actualizarsucursal.component';
+import { CrearsucursalespecialidadComponent } from './pages/crearsucursalespecialidad/crearsucursalespecialidad.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -47,7 +49,7 @@ const routes: Routes = [
       },
       {
         path: 'ver-horarios',
-        component: VerhorariosComponent,
+        component: CrearhorarioComponent,
         canActivate: [loginGuard]
       },
       {
@@ -73,6 +75,16 @@ const routes: Routes = [
       {
         path: 'crear-sucursal',
         component: CrearsucursalComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'actualizar-sucursal',
+        component: ActualizarsucursalComponent,
+        canActivate: [loginGuard]
+      },
+      {
+        path: 'crear-especialidad-sucursal',
+        component: CrearsucursalespecialidadComponent,
         canActivate: [loginGuard]
       },
       {

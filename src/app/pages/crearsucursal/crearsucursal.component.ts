@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AdministradorService } from '../../services/administrador.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-crearsucursal',
@@ -11,9 +12,10 @@ export class CrearsucursalComponent {
     nombre: '',
     direccion: '',
   };
-  constructor(private sucursalService:AdministradorService) { }
+  constructor(private sucursalService: AdministradorService) { }
+
   crearSucursal(): void {
-    if(this.sucursal.nombre!=='' && this.sucursal.direccion!=='' ){
+    if (this.sucursal.nombre !== '' && this.sucursal.direccion !== '') {
 
       this.sucursalService.crearSucursal(this.sucursal).subscribe(
         response => {
@@ -25,9 +27,9 @@ export class CrearsucursalComponent {
           alert('Hubo un error al crear la Sucursal.');
         }
       );
-    }else{
+    } else {
       alert('los campos no pueden estar vacios')
     }
-      
+
   }
 }
