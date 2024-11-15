@@ -21,6 +21,8 @@ import { CrearsucursalComponent } from './pages/crearsucursal/crearsucursal.comp
 import { ListasucursalComponent } from './pages/listasucursal/listasucursal.component';
 import { ListamedicoComponent } from './pages/listamedico/listamedico.component';
 import { ActualizarmedicoComponent } from './pages/actualizarmedico/actualizarmedico.component';
+import { ActualizarsucursalComponent } from './pages/actualizarsucursal/actualizarsucursal.component';
+import { CrearsucursalespecialidadComponent } from './pages/crearsucursalespecialidad/crearsucursalespecialidad.component';
 @NgModule({
 
   declarations: [
@@ -39,7 +41,9 @@ import { ActualizarmedicoComponent } from './pages/actualizarmedico/actualizarme
     CrearsucursalComponent,
     ListasucursalComponent,
     ListamedicoComponent,
-    ActualizarmedicoComponent
+    ActualizarmedicoComponent,
+    ActualizarsucursalComponent,
+    CrearsucursalespecialidadComponent
   ],
   imports: [
     BrowserModule,

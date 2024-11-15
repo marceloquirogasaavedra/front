@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -26,6 +26,21 @@ export class AdministradorService {
   listarSucursales(): Observable<any> {
     return this.http.get(this.url + 'sucursal/listar');
   }
+  eliminarSucursal(credentials: { nombre: string, direccion: string }): Observable<any> {
+    const options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json'}),
+      
+      body: credentials
+    };
+    return this.http.delete(this.url + 'sucursal/eliminar', options)
+  }
+  actualizarSucursal(id: string, sucursal: { nombre: string, direccion: string }): Observable<any> {
+     return this.http.put(`${this.url}sucursal/modificar/${id}`, sucursal) };
+
+     obtenerSucursal(id: string): Observable<any> {
+       return this.listarSucursales().pipe( map(sucursales => 
+        sucursales.find((sucursal: any) => sucursal.id === id)) ); }
+        
   ////////////////// MEDICO ////////////////
   listarMedicos(): Observable<any> {
     return this.http.get(this.url + 'medico/listar')
@@ -48,11 +63,15 @@ export class AdministradorService {
     return this.http.post(this.url + 'medico/crear', credentials);
   }
   actualizarMedico(id: string, medico: any): Observable<any> {
-    return this.http.put(`${this.url}/medico/modificar/${id}`, medico);
+    return this.http.put(`${this.url}medico/modificar/${id}`, medico);
   }
   obtenerMedico(id: string): Observable<any> {
     return this.listarMedicos().pipe(map(medicos => medicos.find((medico: any) =>
       medico.id === id)));
   }
-
+  /////////////////////////////
+  guardarHorario(horario: any): Observable<any> { return this.http.post(`${this.url}horarios`, horario); }
+////////////////////////////////////
+  asignarEspecialidadASucursal(asignacion: { id_sucursal: string, id_especialidad: string }): Observable<any> {
+     return this.http.post(`${this.url}sucursal_especialidad/asignar`, asignacion);}
 }

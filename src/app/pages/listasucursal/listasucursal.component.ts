@@ -19,6 +19,18 @@ export class ListasucursalComponent {
         console.error('Error al obtener especialidades:', error);
       }
     );
-  
 }
+
+eliminarSucursal(sucursal:{ nombre: string, direccion: string}): void {
+  const sucursalEliminar = { nombre: sucursal.nombre, direccion: sucursal.direccion };
+   this.sucursalService.eliminarSucursal(sucursalEliminar).subscribe( (response) =>{
+     alert('Sucursal eliminada exitosamente!'); 
+     this.ngOnInit()
+     },
+      (error) => { 
+        console.log(sucursalEliminar)
+    console.error('Error al eliminar la sucursal:', error); 
+    alert('Hubo un error al eliminar la sucursal.');
+   });
+ }
 }
