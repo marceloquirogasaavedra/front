@@ -6,7 +6,7 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdministradorService {
-  private url = 'http://localhost:8080/'
+  private url = 'http://98.85.43.120:8080/'
   constructor(private http: HttpClient) { }
   /////////////////// LOGIN ///////////////////////
   login(credentials: { correo: string, password: string }): Observable<any> {
